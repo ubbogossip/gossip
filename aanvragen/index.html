@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roddels Aanvragen</title>
+    <style>
+        :root {
+            --dark-blue: #2C3E75;
+            --orange: #F28C28;
+            --light-blue: #0D71B8;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--orange);
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            background-color: var(--white);
+            padding: 2em;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--dark-blue);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1em;
+            margin: 0.5em 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Roddels Aanvragen</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="nieuws.html">Nieuws</a>
+        <a href="roddels-aanvragen.html">Roddels Aanvragen</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Heb jij een roddel voor ons? Deel het hier!</h2>
+        <form action="process_roddel.php" method="POST">
+            <label for="name">Jouw naam:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="roddel">De roddel:</label>
+            <textarea id="roddel" name="roddel" rows="4" required></textarea>
+            
+            <input type="submit" value="Verstuur Roddels">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Scholengemeenschap Gossip</p>
+    </footer>
+</body>
+</html>

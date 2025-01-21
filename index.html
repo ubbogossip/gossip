@@ -21,13 +21,33 @@
         }
 
         .header {
-            background-color: var(--dark-blue);
+            background-color: var(--orange);
             padding: 1em;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header h1 {
             margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1em;
+        }
+
+        .nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
         }
 
         .prikbord-container {
@@ -51,7 +71,6 @@
             color: var(--dark-blue);
             padding: 1em;
             width: 100%;
-            max-width: 100%;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
             text-align: left;
@@ -73,10 +92,18 @@
             color: gray;
             text-align: left;
         }
+
+        html, body {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
     <div class="header">
+        <div class="nav">
+            <a href="https://ubbogossip.github.io/gossip/aanvragen/">Vraag een roddel aan</a>
+            <a href="#">Info</a>
+        </div>
         <h1>De laatste roddels op het prikbord!</h1>
     </div>
     <div class="prikbord-container">

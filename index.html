@@ -18,7 +18,7 @@
             padding: 0;
             background-color: var(--light-blue);
             color: var(--white);
-            overflow-x: hidden; /* Geen horizontaal scrollen */
+            overflow-x: hidden; /* Geen horizontale scrollbar */
         }
 
         header {
@@ -82,6 +82,9 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
             text-align: left; /* Tekst begint aan de linkerkant */
             overflow-wrap: break-word; /* Lange woorden breken */
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
         .roddel-blaadje h1 {
@@ -91,13 +94,15 @@
 
         .roddel-blaadje p {
             font-size: 16px;
-            margin-top: 10px;
+            margin: 10px 0;
         }
 
         .roddel-blaadje .datum {
-            font-size: 14px;
-            text-align: right;
+            font-size: 12px;
             color: #555;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
         }
 
         footer {
@@ -148,8 +153,8 @@
             }
 
             // Voorbeeld van het toevoegen van roddels
-            voegRoddelToe("Roddel 1 Titel", "Dit is de eerste roddel. Lange teksten worden automatisch goed weergegeven, en de roddels scrollen netjes als er te veel zijn.", "2025-01-21");
-            voegRoddelToe("Roddel 2 Titel", "Dit is nog een roddel. Je kunt eenvoudig nieuwe roddels toevoegen met de functie.", "2025-01-21");
+            voegRoddelToe("Roddel 1 Titel", "Dit is de eerste roddel. zo gaan ze lijken als er roddels binnenkomen.", "2025-01-21");
+            voegRoddelToe("Roddel 2 Titel", "Dit is nog een roddel. ze blijven voorlopig zo todat er echt roddels binnenkomen :)", "2025-01-21");
         </script>
     </main>
 

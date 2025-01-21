@@ -57,7 +57,8 @@
             margin-top: 2em;
             max-height: 60vh; /* Beperk de hoogte van het prikbord */
             overflow-y: auto; /* Scrollbaar maken als er veel roddels zijn */
-            padding-right: 1em; /* Ruimte voor scrollbar */
+            padding: 1em;
+            box-sizing: border-box; /* Zorg dat padding niet buiten het scherm valt */
         }
 
         .prikbord::-webkit-scrollbar {
@@ -77,7 +78,8 @@
             background-color: var(--white);
             color: var(--dark-blue);
             padding: 1em;
-            width: 100%; /* Vul de volledige breedte */
+            width: 100%; /* Past automatisch aan aan de containerbreedte */
+            max-width: 100%; /* Voorkom horizontale scrolling */
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
             text-align: left; /* Tekst begint aan de linkerkant */
@@ -153,13 +155,9 @@
             }
 
             // Voorbeeld van het toevoegen van roddels
-            voegRoddelToe("Roddel 1 Titel", "Dit is de eerste roddel. zo gaan ze lijken als er roddels binnenkomen.", "2025-01-21");
-            voegRoddelToe("Roddel 2 Titel", "Dit is nog een roddel. ze blijven voorlopig zo todat er echt roddels binnenkomen :)", "2025-01-21");
+            voegRoddelToe("Roddel 1 Titel", "Dit is de eerste roddel. Dit is hoe ze er ongeveer uit gaan zien.", "2025-01-21");
+            voegRoddelToe("Roddel 2 Titel", "Dit is nog een roddel. ze blijven voorlopig nog zo staan totda we roddels krijgen aangevraagd.", "2025-01-21");
         </script>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Scholengemeenschap Gossip</p>
-    </footer>
 </body>
 </html>

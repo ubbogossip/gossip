@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Site</title>
+    <style>
+        :root {
+            --dark-blue: #2C3E75; /* Donkerblauw */
+            --orange: #F28C28; /* Oranje */
+            --light-blue: #0D71B8; /* Lichtblauw */
+            --white: #FFFFFF; /* Wit */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--orange);
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welkom op de Gossip Site!</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="nieuws.html">Nieuws</a> <!-- Voeg de juiste pagina's toe -->
+        <a href="roddels.html">Roddelhoek</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>De laatste updates van de school</h2>
+        <p>Blijf hier op de hoogte van alle verhalen, roddels en meer!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Scholengemeenschap Gossip</p>
+    </footer>
+</body>
+</html>

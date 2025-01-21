@@ -49,15 +49,6 @@
             text-align: center;
         }
 
-        footer {
-            background-color: var(--dark-blue);
-            text-align: center;
-            padding: 1em;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
         form {
             background-color: var(--white);
             padding: 2em;
@@ -92,27 +83,22 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="roddels-aanvragen.html">Roddels Aanvragen</a>
-        <a href="contact.html">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../moderator.html">Moderator</a>
     </nav>
 
     <main>
-        <h2>Heb jij een roddel voor ons? Deel het hier!</h2>
-        <form action="process_roddel.php" method="POST">
-            <label for="name">Jouw naam:</label>
-            <input type="text" id="name" name="name" required>
+        <h2>plaats hier je gossip :)</h2>
+        <form action="https://formspree.io/f/xrbezpge" method="POST">
+            <label for="name">Jouw naam (typ anoniem als dat nodig is) :</label>
+            <input type="text" id="name" name="name" placeholder="Bijvoorbeeld: Anoniem" required>
             
-            <label for="roddel">De roddel:</label>
-            <textarea id="roddel" name="roddel" rows="4" required></textarea>
+            <label for="roddel">gossip:</label>
+            <textarea id="roddel" name="roddel" rows="4" placeholder="Typ hier je roddel..." required></textarea>
+            
             
             <input type="submit" value="Verstuur Roddels">
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Scholengemeenschap Gossip</p>
-    </footer>
 </body>
 </html>

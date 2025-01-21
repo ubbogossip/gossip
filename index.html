@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gossip Site</title>
+    <title>Prikbord</title>
     <style>
         :root {
-            --dark-blue: #2C3E75;
-            --orange: #F28C28;
-            --light-blue: #0D71B8;
-            --white: #FFFFFF;
+            --dark-blue: #002060;
+            --orange: #f7941d;
+            --light-blue: #0073ce;
+            --white: #ffffff;
         }
 
         body {
@@ -18,36 +18,22 @@
             padding: 0;
             background-color: var(--light-blue);
             color: var(--white);
-            overflow-x: hidden; /* Geen horizontale scrollbar */
         }
 
-        header {
+        .header {
             background-color: var(--dark-blue);
             padding: 1em;
             text-align: center;
         }
 
-        nav {
-            background-color: var(--orange);
+        .header h1 {
+            margin: 0;
+        }
+
+        .prikbord-container {
+            max-width: 800px;
+            margin: 2em auto;
             padding: 1em;
-            display: flex;
-            justify-content: center;
-            gap: 1em;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 2em;
-            text-align: center;
         }
 
         .prikbord {
@@ -55,109 +41,80 @@
             flex-direction: column;
             gap: 1em;
             margin-top: 2em;
-            max-height: 60vh; /* Beperk de hoogte van het prikbord */
-            overflow-y: auto; /* Scrollbaar maken als er veel roddels zijn */
+            overflow-y: auto;
             padding: 1em;
-            box-sizing: border-box; /* Zorg dat padding niet buiten het scherm valt */
-        }
-
-        .prikbord::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .prikbord::-webkit-scrollbar-thumb {
-            background: var(--orange);
-            border-radius: 5px;
-        }
-
-        .prikbord::-webkit-scrollbar-thumb:hover {
-            background: var(--dark-blue);
+            box-sizing: border-box;
         }
 
         .roddel-blaadje {
             background-color: var(--white);
             color: var(--dark-blue);
             padding: 1em;
-            width: 100%; /* Past automatisch aan aan de containerbreedte */
-            max-width: 100%; /* Voorkom horizontale scrolling */
+            width: 100%;
+            max-width: 100%;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            text-align: left; /* Tekst begint aan de linkerkant */
-            overflow-wrap: break-word; /* Lange woorden breken */
+            text-align: left;
+            overflow-wrap: break-word;
             display: flex;
             flex-direction: column;
             position: relative;
+            box-sizing: border-box;
+            min-height: 150px;
         }
 
         .roddel-blaadje h1 {
-            font-size: 18px;
-            margin: 0;
-        }
-
-        .roddel-blaadje p {
-            font-size: 16px;
-            margin: 10px 0;
+            margin: 0 0 0.5em 0;
         }
 
         .roddel-blaadje .datum {
-            font-size: 12px;
-            color: #555;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-        }
-
-        footer {
-            background-color: var(--dark-blue);
-            text-align: center;
-            padding: 1em;
-            margin-top: 1em;
+            margin-top: auto;
+            font-size: 0.9em;
+            color: gray;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welkom op de Gossip Site!</h1>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="roddels-aanvragen.html">Roddels Aanvragen</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <main>
-        <h2>De laatste roddels op het prikbord!</h2>
-        
+    <div class="header">
+        <h1>De laatste roddels op het prikbord!</h1>
+    </div>
+    <div class="prikbord-container">
         <div id="prikbord" class="prikbord">
-            <!-- Hier kunnen roddels worden toegevoegd als "blaadjes" -->
+            <!-- De roddels worden hier dynamisch toegevoegd -->
         </div>
-        
-        <script>
-            // Functie om roddels toe te voegen bovenaan
-            function voegRoddelToe(titel, roddelText, datum) {
-                const prikbord = document.getElementById("prikbord");
+    </div>
+    <script>
+        // Functie om roddels toe te voegen bovenaan
+        function voegRoddelToe(titel, roddelText, datum) {
+            const prikbord = document.getElementById("prikbord");
 
-                // Maak een nieuw roddel-blaadje
-                const roddelBlaadje = document.createElement("div");
-                roddelBlaadje.className = "roddel-blaadje";
+            // Maak een nieuw roddel-blaadje
+            const roddelBlaadje = document.createElement("div");
+            roddelBlaadje.className = "roddel-blaadje";
 
-                // Voeg de titel, tekst en datum toe
-                roddelBlaadje.innerHTML = `
-                    <h1>${titel}</h1>
-                    <p>${roddelText}</p>
-                    <div class="datum">Geplaatst op: ${datum}</div>
-                `;
+            // Voeg de titel, tekst en datum toe
+            roddelBlaadje.innerHTML = `
+                <h1>${titel}</h1>
+                <p>${roddelText}</p>
+                <div class="datum">Geplaatst op: ${datum}</div>
+            `;
 
-                // Voeg het nieuwe roddel-blaadje bovenaan de prikbord container toe
-                prikbord.insertBefore(roddelBlaadje, prikbord.firstChild);
-            }
+            // Voeg het nieuwe roddel-blaadje bovenaan de prikbord container toe
+            prikbord.insertBefore(roddelBlaadje, prikbord.firstChild);
+        }
 
-            // Voorbeeld van het toevoegen van roddels
-            voegRoddelToe("Roddel 1 Titel", "Dit is de eerste roddel. Dit is hoe ze er ongeveer uit gaan zien.", "2025-01-21");
-            voegRoddelToe("Roddel 2 Titel", "Dit is nog een roddel. ze blijven voorlopig nog zo staan totda we roddels krijgen aangevraagd.", "2025-01-21");
-        </script>
-    </main>
+        // Voorbeeld van het toevoegen van roddels
+        voegRoddelToe(
+            "Roddel 1 Titel",
+            "Dit is de eerste roddel. Hier kun je een langere tekst schrijven en het blaadje past zich automatisch aan de inhoud aan.",
+            "2025-01-21"
+        );
+        voegRoddelToe(
+            "Roddel 2 Titel",
+            "Dit is een voorbeeldroddel die langer is dan normaal. Het roddelblaadje zal zich automatisch aanpassen om de volledige inhoud te laten zien.",
+            "2025-01-21"
+        );
+    </script>
 </body>
 </html>
